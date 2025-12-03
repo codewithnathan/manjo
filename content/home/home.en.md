@@ -11,7 +11,7 @@ navigation:
   bookNow: Book Now
 hero:
   explore: Your Journey 123
-  world: Our Priority
+  world: Our Priority 123
   travelDescription: >-
     Explore the world with Manjo Travel & Tours - Your trusted partner for
     tours, tickets, visas, and conferences.
