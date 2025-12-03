@@ -10,37 +10,63 @@ navigation:
   blog: Blog
   bookNow: Book Now
 hero:
-  explore: Your Journey
+  explore: Your Journey 123
   world: Our Priority
-  travelDescription: "Explore the world with Manjo Travel & Tours - Your trusted partner for tours, tickets, visas, and conferences."
-  heroTagline: "Your journey, our priority."
-  heroDescription: "Explore the world with Manjo Travel & Tours - Your trusted partner for tours, tickets, visas, and conferences."
+  travelDescription: >-
+    Explore the world with Manjo Travel & Tours - Your trusted partner for
+    tours, tickets, visas, and conferences.
+  heroTagline: 'Your journey, our priority.'
+  heroDescription: >-
+    Explore the world with Manjo Travel & Tours - Your trusted partner for
+    tours, tickets, visas, and conferences.
   travelPlaces: Travel places
   ourStory: Our story
   ourStoryDescription: Travel is the movement of people between distant geographical locations.
 about:
   aboutTitle: Manjo Travel and Tours
-  aboutDescription: Founded with a passion for service and a commitment to reliable travel solutions, Manjo has grown into a trusted partner for individuals, families, and organizations looking to explore the world with confidence.
-  aboutText: Based in Manado, Indonesia, our team is dedicated to providing high-quality travel services — from flight tickets and tour packages to visa assistance and conference event logistics support. We take pride in delivering experiences that are not only well-organized, memorable, but also crafted with genuine care.
+  aboutDescription: >-
+    Founded with a passion for service and a commitment to reliable travel
+    solutions, Manjo has grown into a trusted partner for individuals, families,
+    and organizations looking to explore the world with confidence.
+  aboutText: >-
+    Based in Manado, Indonesia, our team is dedicated to providing high-quality
+    travel services — from flight tickets and tour packages to visa assistance
+    and conference event logistics support. We take pride in delivering
+    experiences that are not only well-organized, memorable, but also crafted
+    with genuine care.
   ourCommitment: Our Commitment
   personalizedService: Personalized service
   seamlessLogistics: Seamless logistics support
   reliableSupport: Reliable support
   carefullyPlanned: Carefully planned itineraries
   warmCustomerCare: Warm and friendly customer care
-  closingMessage: At Manjo, we don't just plan trips — we create experiences. Because for us, travel is more than moving from one place to another; it's a journey worth cherishing.
+  closingMessage: >-
+    At Manjo, we don't just plan trips — we create experiences. Because for us,
+    travel is more than moving from one place to another; it's a journey worth
+    cherishing.
 services:
   services: Our Services
   airlineTickets: Airline Tickets
-  airlineDescription: "International & domestic ticketing, corporate travel support, and group ticketing solutions."
+  airlineDescription: >-
+    International & domestic ticketing, corporate travel support, and group
+    ticketing solutions.
   visaServices: Visa Services
-  visaDescription: "Visa assistance for Europe (Schengen), America, Asia, Africa, the Pacific, student visas, and group processing."
+  visaDescription: >-
+    Visa assistance for Europe (Schengen), America, Asia, Africa, the Pacific,
+    student visas, and group processing.
   pilgrimageTours: Pilgrimage Tours
-  pilgrimageDescription: "Holy Land, Apostle Paul's Journey, Seven Churches, Reformation tours, Heritage SDA tours, and Catholic pilgrimages."
+  pilgrimageDescription: >-
+    Holy Land, Apostle Paul's Journey, Seven Churches, Reformation tours,
+    Heritage SDA tours, and Catholic pilgrimages.
   eventLogistics: Event Logistics
-  eventDescription: "Complete event management: venue, registration, accommodations, transportation, tickets, F&B, amenities, visas, tours, VIP support, and full project handling."
+  eventDescription: >-
+    Complete event management: venue, registration, accommodations,
+    transportation, tickets, F&B, amenities, visas, tours, VIP support, and full
+    project handling.
   leisureTours: Leisure Tours
-  leisureDescription: "School trips, corporate incentives, technical visits, family tours, cruises, train journeys, attractions, and group tours."
+  leisureDescription: >-
+    School trips, corporate incentives, technical visits, family tours, cruises,
+    train journeys, attractions, and group tours.
 gallery:
   discoverTheWorld: Discover the world
   viewDetails: View Details
@@ -50,6 +76,7 @@ cta:
   bookNowCta: Book Now!
 contact:
   contactEmail: booking@manjotravel.com
-  contactPhone: "TBC (to be confirmed)"
-  domainName: "www.manjotravel.com & manjotravelandtours.com"
+  contactPhone: TBC (to be confirmed)
+  domainName: www.manjotravel.com & manjotravelandtours.com
 ---
+
