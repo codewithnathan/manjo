@@ -18,7 +18,7 @@ hero:
   heroTagline: 'Your journey, our priority.'
   heroDescription: >-
     Explore the world with Manjo Travel & Tours - Your trusted partner for
-    tours, tickets, visas, and conferences.3
+    tours, tickets, visas, and conferences.
   travelPlaces: Travel places
   ourStory: Our story
   ourStoryDescription: Travel is the movement of people between distant geographical locations.
