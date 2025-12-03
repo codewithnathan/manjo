@@ -23,7 +23,7 @@ hero:
   ourStory: Our story
   ourStoryDescription: Travel is the movement of people between distant geographical locations.
 about:
-  aboutTitle: Manjo Travel and Tours
+  aboutTitle: Manjo Travel and Tours 123
   aboutDescription: >-
     Founded with a passion for service and a commitment to reliable travel
     solutions, Manjo has grown into a trusted partner for individuals, families,
