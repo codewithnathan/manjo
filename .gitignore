@@ -1,6 +1,7 @@
 .vercel
 .next
 node_modules
+.env
 
 # Tina
 tina/__generated__
