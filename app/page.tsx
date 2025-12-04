@@ -1,230 +1,52 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Instagram, Mail } from "lucide-react";
-import WhatsappIcon from "@/public/icon/whatsapp-icon.svg";
 import Link from "next/link";
+import LanguageToggle from "@/components/LanguageToggle";
+import { getHomeContent, getAllDestinations } from "@/lib/tina";
 
-const translations = {
-  ENG: {
-    home: "Home",
-    ourService: "Our services",
-    aboutUs: "About us",
-    tourpackages: "Tour packages",
-    gallery: "Gallery",
-    contactus: "Contact us",
-    blog: "Blog",
-    bookNow: "Book Now",
-    explore: "Your Journey",
-    world: "Our Priority",
-    travelDescription:
-      "Explore the world with Manjo Travel & Tours - Your trusted partner for tours, tickets, visas, and conferences.",
-    heroTagline: "Your journey, our priority.",
-    heroDescription:
-      "Explore the world with Manjo Travel & Tours - Your trusted partner for tours, tickets, visas, and conferences.",
-    aboutTitle: "Manjo Travel and Tours",
-    aboutDescription:
-      "Founded with a passion for service and a commitment to reliable travel solutions, Manjo has grown into a trusted partner for individuals, families, and organizations looking to explore the world with confidence.",
-    aboutText:
-      "Based in Manado, Indonesia, our team is dedicated to providing high-quality travel services — from flight tickets and tour packages to visa assistance and conference event logistics support. We take pride in delivering experiences that are not only well-organized, memorable, but also crafted with genuine care.",
-    ourCommitment: "Our Commitment",
-    personalizedService: "Personalized service",
-    seamlessLogistics: "Seamless logistics support",
-    reliableSupport: "Reliable support",
-    carefullyPlanned: "Carefully planned itineraries",
-    warmCustomerCare: "Warm and friendly customer care",
-    closingMessage:
-      "At Manjo, we don't just plan trips — we create experiences. Because for us, travel is more than moving from one place to another; it's a journey worth cherishing.",
-    travelPlaces: "Travel places",
-    featuresTitle: "Features",
-    featuresDescription: "Places people love to visit more and more time",
-    ourStory: "Our story",
-    ourStoryDescription:
-      "Travel is the movement of people between distant geographical locations.",
-    discoverTheWorld: "Discover the world",
-    viewDetails: "View Details",
-    person: "person",
-    services: "Our Services",
-    airlineTickets: "Airline Tickets",
-    airlineDescription:
-      "International & domestic ticketing, corporate travel support, and group ticketing solutions.",
-    visaServices: "Visa Services",
-    visaDescription:
-      "Visa assistance for Europe (Schengen), America, Asia, Africa, the Pacific, student visas, and group processing.",
-    pilgrimageTours: "Pilgrimage Tours",
-    pilgrimageDescription:
-      "Holy Land, Apostle Paul's Journey, Seven Churches, Reformation tours, Heritage SDA tours, and Catholic pilgrimages.",
-    eventLogistics: "Event Logistics",
-    eventDescription:
-      "Complete event management: venue, registration, accommodations, transportation, tickets, F&B, amenities, visas, tours, VIP support, and full project handling.",
-    leisureTours: "Leisure Tours",
-    leisureDescription:
-      "School trips, corporate incentives, technical visits, family tours, cruises, train journeys, attractions, and group tours.",
-    getStarted: "Get Started",
-    bookNowCta: "Book Now!",
-    destinations: [
-      {
-        name: "Shadowpeak Canyon",
-        location: "Colorado, USA",
-        price: 240,
-        path: "/beach-hammock.jpg",
-        slug: "shadowpeak-canyon",
-      },
-      {
-        name: "Crimson Rift",
-        location: "Wadi Rum Desert, Jordan",
-        price: 400,
-        path: "/beach-kayak.jpg",
-        slug: "crimson-rift",
-      },
-      {
-        name: "Whispering Dunes",
-        location: "Namib Desert, Namibia",
-        price: 300,
-        path: "/beach-scene.jpg",
-        slug: "whispering-dunes",
-      },
-      {
-        name: "Frostveil Summit",
-        location: "Svalbard, Norway",
-        price: 300,
-        path: "/boat-destination.jpg",
-        slug: "frostveil-summit",
-      },
-      {
-        name: "The Obsidian Hollow",
-        location: "Iceland's Highlands",
-        price: 250,
-        path: "/coastal-town.jpg",
-        slug: "obsidian-hollow",
-      },
-      {
-        name: "Stormbreaker Isles",
-        location: "Faroe Islands, Denmark",
-        price: 450,
-        path: "/island-aerial.jpg",
-        slug: "stormbreaker-isles",
-      },
-    ],
-    circularText: "TO TRAVEL AND RELAX YOURSELF • BEST PLACE TO FIND •",
-    contactEmail: "booking@manjotravel.com",
-    contactPhone: "TBC (to be confirmed)",
-    domainName: "www.manjotravel.com & manjotravelandtours.com",
-  },
-  IND: {
-    home: "Beranda",
-    ourService: "Layanan kami",
-    aboutUs: "Tentang kami",
-    tourpackages: "Paket wisata",
-    gallery: "Galeri",
-    contactus: "Hubungi kami",
-    blog: "Blog",
-    bookNow: "Pesan Sekarang",
-    explore: "Perjalanan Anda",
-    world: "prioritas kami",
-    travelDescription:
-      "Jelajahi dunia dengan Manjo Travel & Tours - Mitra terpercaya Anda untuk tur, tiket, visa, dan konferensi.",
-    heroTagline: "Perjalanan Anda, prioritas kami.",
-    heroDescription:
-      "Jelajahi dunia dengan Manjo Travel & Tours - Mitra terpercaya Anda untuk tur, tiket, visa, dan konferensi.",
-    aboutTitle: "Manjo Travel and Tours",
-    aboutDescription:
-      "Didirikan dengan semangat pelayanan dan komitmen untuk solusi perjalanan yang andal, Manjo telah berkembang menjadi mitra terpercaya bagi individu, keluarga, dan organisasi yang ingin menjelajahi dunia dengan percaya diri.",
-    aboutText:
-      "Berlokasi di Manado, Indonesia, tim kami berdedikasi untuk menyediakan layanan perjalanan berkualitas tinggi — dari tiket pesawat dan paket wisata hingga bantuan visa dan dukungan logistik acara konferensi. Kami bangga menghadirkan pengalaman yang tidak hanya terorganisir dengan baik, berkesan, tetapi juga dibuat dengan perhatian yang tulus.",
-    ourCommitment: "Komitmen Kami",
-    personalizedService: "Layanan yang dipersonalisasi",
-    seamlessLogistics: "Dukungan logistik yang mulus",
-    reliableSupport: "Dukungan yang andal",
-    carefullyPlanned: "Rencana perjalanan yang cermat",
-    warmCustomerCare: "Layanan pelanggan yang hangat dan ramah",
-    closingMessage:
-      "Di Manjo, kami tidak hanya merencanakan perjalanan — kami menciptakan pengalaman. Karena bagi kami, perjalanan lebih dari sekadar berpindah dari satu tempat ke tempat lain; ini adalah perjalanan yang layak untuk dihargai.",
-    travelPlaces: "Tempat wisata",
-    featuresTitle: "Fitur",
-    featuresDescription:
-      "Tempat yang disukai orang untuk dikunjungi lagi dan lagi",
-    ourStory: "Cerita Kami",
-    ourStoryDescription:
-      "Perjalanan adalah perpindahan orang antar lokasi geografis yang jauh.",
-    discoverTheWorld: "Jelajahi dunia",
-    viewDetails: "Lihat Detail",
-    person: "orang",
-    services: "Layanan Kami",
-    airlineTickets: "Tiket Pesawat",
-    airlineDescription:
-      "Tiket internasional & domestik, dukungan perjalanan korporat, dan solusi tiket grup.",
-    visaServices: "Layanan Visa",
-    visaDescription:
-      "Bantuan visa untuk Eropa (Schengen), Amerika, Asia, Afrika, Pasifik, visa pelajar, dan pemrosesan grup.",
-    pilgrimageTours: "Tur Ziarah",
-    pilgrimageDescription:
-      "Tanah Suci, Perjalanan Rasul Paulus, Tujuh Gereja, tur Reformasi, tur Warisan SDA, dan ziarah Katolik.",
-    eventLogistics: "Logistik Acara",
-    eventDescription:
-      "Manajemen acara lengkap: venue, registrasi, akomodasi, transportasi, tiket, F&B, fasilitas, visa, tur, dukungan VIP, dan penanganan proyek penuh.",
-    leisureTours: "Tur Wisata",
-    leisureDescription:
-      "Perjalanan sekolah, insentif korporat, kunjungan teknis, tur keluarga, kapal pesiar, perjalanan kereta, atraksi, dan tur grup.",
-    getStarted: "Mulai Sekarang",
-    bookNowCta: "Pesan Sekarang!",
-    destinations: [
-      {
-        name: "Shadowpeak Canyon",
-        location: "Colorado, USA",
-        price: 240,
-        path: "/beach-hammock.jpg",
-        slug: "shadowpeak-canyon",
-      },
-      {
-        name: "Crimson Rift",
-        location: "Wadi Rum Desert, Yordania",
-        price: 400,
-        path: "/beach-kayak.jpg",
-        slug: "crimson-rift",
-      },
-      {
-        name: "Whispering Dunes",
-        location: "Namib Desert, Namibia",
-        price: 300,
-        path: "/beach-scene.jpg",
-        slug: "whispering-dunes",
-      },
-      {
-        name: "Frostveil Summit",
-        location: "Svalbard, Norwegia",
-        price: 300,
-        path: "/boat-destination.jpg",
-        slug: "frostveil-summit",
-      },
-      {
-        name: "The Obsidian Hollow",
-        location: "Iceland's Highlands",
-        price: 250,
-        path: "/coastal-town.jpg",
-        slug: "obsidian-hollow",
-      },
-      {
-        name: "Stormbreaker Isles",
-        location: "Kepulauan Faroe, Denmark",
-        price: 450,
-        path: "/island-aerial.jpg",
-        slug: "stormbreaker-isles",
-      },
-    ],
-    circularText:
-      "UNTUK BERPERGIAN DAN BERSANTAI • TEMPAT TERBAIK UNTUK MENEMUKAN •",
-    contactEmail: "booking@manjotravel.com",
-    contactPhone: "TBC (untuk dikonfirmasi)",
-    domainName: "www.manjotravel.com & manjotravelandtours.com",
-  },
-};
+interface PageProps {
+  searchParams: Promise<{ lang?: string }>;
+}
 
-export default function LandingPage() {
-  const [language, setLanguage] = useState<"ENG" | "IND">("ENG");
-  const t = translations[language];
+export default async function LandingPage({ searchParams }: PageProps) {
+  const { lang: langParam } = await searchParams;
+
+  const lang = (langParam === "id" ? "id" : "en") as "en" | "id";
+  
+  const content = await getHomeContent(lang);
+  const destinationsData = await getAllDestinations(lang);
+
+  if (!content) {
+    return (
+      <div className="min-h-screen bg-[#F4F2EF] flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-serif text-[#336021] mb-4">
+            Content Not Available
+          </h1>
+          <p className="text-[#336021]">Please try again later.</p>
+        </div>
+      </div>
+    );
+  }
+
+  const t = {
+    ...content.navigation,
+    ...content.hero,
+    ...content.about,
+    ...content.services,
+    ...content.gallery,
+    ...content.cta,
+    ...content.contact,
+  };
+
+  const destinations = destinationsData.map((dest: any) => ({
+    name: dest.name,
+    location: dest.location,
+    price: dest.price,
+    path: dest.image,
+    slug: dest.slug,
+  }));
 
   return (
     <div className="min-h-screen bg-[#F4F2EF]">
@@ -264,30 +86,7 @@ export default function LandingPage() {
           </a>
         </nav>
 
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-1 border-2 border-[#336021] rounded-full p-1">
-            <button
-              onClick={() => setLanguage("IND")}
-              className={`px-4 py-1.5 rounded-full text-sm font-serif font-bold transition-all ${
-                language === "IND"
-                  ? "bg-[#336021] text-white"
-                  : "text-[#336021] hover:bg-[#D8D1BD]/30"
-              }`}
-            >
-              IND
-            </button>
-            <button
-              onClick={() => setLanguage("ENG")}
-              className={`px-4 py-1.5 rounded-full text-sm font-serif font-bold transition-all ${
-                language === "ENG"
-                  ? "bg-[#336021] text-white"
-                  : "text-[#336021] hover:bg-[#D8D1BD]/30"
-              }`}
-            >
-              ENG
-            </button>
-          </div>
-        </div>
+        <LanguageToggle />
       </header>
 
       {/* Hero Section */}
@@ -530,7 +329,7 @@ export default function LandingPage() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {t.destinations.map((destination, index) => (
+          {destinations.map((destination, index) => (
             <div
               key={index}
               className="bg-[#F4F2EF] rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all hover:-translate-y-2"

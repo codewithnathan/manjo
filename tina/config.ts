@@ -25,6 +25,12 @@ export default defineConfig({
       publicFolder: "public",
     },
   },
+  // Custom branding
+  cmsCallback: (cms) => {
+    cms.logo = "/manjo-logo.png";
+    cms.sidebar.position = "overlay"
+    return cms
+  },
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
     collections: [
