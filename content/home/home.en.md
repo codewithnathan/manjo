@@ -1,7 +1,7 @@
 ---
 locale: en
 navigation:
-  home: Home
+  home: Home123
   aboutUs: About us
   ourService: Our services
   tourpackages: Tour packages
