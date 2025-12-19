@@ -4,7 +4,7 @@ slug: crimson-rift
 name: Crimson Rift
 location: 'Wadi Rum Desert, Jordan'
 price: 300
-image: /beach-kayak.jpg
+image: /beach-scene.jpg
 gallery:
   - image: /beach-kayak.jpg
     caption: Desert adventure awaits
