@@ -1,7 +1,7 @@
 ---
 locale: en
 slug: crimson-rift
-name: Crimson Rift 123
+name: Crimson Rift 1
 location: 'Wadi Rum Desert, Jordan'
 price: 400
 image: /beach-kayak.jpg
