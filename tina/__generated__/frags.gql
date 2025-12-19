@@ -1,0 +1,107 @@
+fragment HomeParts on Home {
+  __typename
+  locale
+  navigation {
+    __typename
+    home
+    aboutUs
+    ourService
+    tourpackages
+    gallery
+    contactus
+    blog
+    bookNow
+  }
+  hero {
+    __typename
+    explore
+    world
+    travelDescription
+    heroTagline
+    heroDescription
+    travelPlaces
+    ourStory
+    ourStoryDescription
+  }
+  about {
+    __typename
+    aboutTitle
+    aboutDescription
+    aboutText
+    ourCommitment
+    personalizedService
+    seamlessLogistics
+    reliableSupport
+    carefullyPlanned
+    warmCustomerCare
+    closingMessage
+  }
+  features {
+    __typename
+    featuresTitle
+    featuresDescription
+  }
+  services {
+    __typename
+    services
+    airlineTickets
+    airlineDescription
+    visaServices
+    visaDescription
+    pilgrimageTours
+    pilgrimageDescription
+    eventLogistics
+    eventDescription
+    leisureTours
+    leisureDescription
+  }
+  gallery {
+    __typename
+    discoverTheWorld
+    viewDetails
+    person
+    circularText
+  }
+  cta {
+    __typename
+    getStarted
+    bookNowCta
+  }
+  contact {
+    __typename
+    contactEmail
+    contactPhone
+    domainName
+  }
+}
+
+fragment DestinationParts on Destination {
+  __typename
+  locale
+  slug
+  name
+  location
+  price
+  image
+  gallery {
+    __typename
+    image
+    caption
+  }
+  description
+  highlights {
+    __typename
+    highlight
+  }
+  itinerary
+  included {
+    __typename
+    item
+  }
+  excluded {
+    __typename
+    item
+  }
+  duration
+  difficulty
+}

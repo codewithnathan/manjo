@@ -1,0 +1,7 @@
+.vercel
+.next
+node_modules
+
+# Tina
+# tina/__generated__
+.tina
