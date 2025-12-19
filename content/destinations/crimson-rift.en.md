@@ -1,8 +1,8 @@
 ---
 locale: en
 slug: crimson-rift
-name: Crimson Rift 123
-location: 'Wadi Rum Desert, Jordan'
+name: Crimson Rift
+location: 'Wadi Rum Desert, Jordan 123'
 price: 300
 image: /beach-scene.jpg
 gallery:
