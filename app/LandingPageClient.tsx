@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import {} from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Instagram, Mail } from "lucide-react";
@@ -68,18 +68,14 @@ interface TranslationData {
 }
 
 interface LandingPageClientProps {
-  initialTranslations: {
-    ENG: TranslationData;
-    IND: TranslationData;
-  };
+  t: TranslationData;
+  language: "ENG" | "IND";
 }
 
 export default function LandingPageClient({
-  initialTranslations,
+  t,
+  language,
 }: LandingPageClientProps) {
-  const [language, setLanguage] = useState<"ENG" | "IND">("ENG");
-  const t = initialTranslations[language];
-
   return (
     <div className="min-h-screen bg-[#F4F2EF]">
       {/* Header */}
@@ -120,8 +116,8 @@ export default function LandingPageClient({
 
         <div className="flex items-center gap-4 scale-80">
           <div className="flex items-center gap-1 border-2 border-[#336021] rounded-full p-1">
-            <button
-              onClick={() => setLanguage("IND")}
+            <Link
+              href="/?lang=id"
               className={`px-4 py-1.5 rounded-full text-sm font-serif font-bold transition-all ${
                 language === "IND"
                   ? "bg-[#336021] text-white"
@@ -129,9 +125,9 @@ export default function LandingPageClient({
               }`}
             >
               ID
-            </button>
-            <button
-              onClick={() => setLanguage("ENG")}
+            </Link>
+            <Link
+              href="/?lang=en"
               className={`px-4 py-1.5 rounded-full text-sm font-serif font-bold transition-all ${
                 language === "ENG"
                   ? "bg-[#336021] text-white"
@@ -139,7 +135,7 @@ export default function LandingPageClient({
               }`}
             >
               EN
-            </button>
+            </Link>
           </div>
         </div>
       </header>

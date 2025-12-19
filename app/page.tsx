@@ -1,54 +1,46 @@
 import { getHomeContent, getAllDestinations } from "@/lib/tina";
 import LandingPageClient from "./LandingPageClient";
 
-export const revalidate = 60; // Cek data baru setiap 60 detik
+interface PageProps {
+  searchParams: Promise<{ lang?: string }>;
+}
 
-export default async function LandingPage() {
-  const enData = await getHomeContent("en");
-  const idData = await getHomeContent("id");
-  const enDestinations = await getAllDestinations("en");
-  const idDestinations = await getAllDestinations("id");
+export const dynamic = "force-dynamic";
 
-  if (!enData || !idData) {
+export default async function LandingPage(props: PageProps) {
+  const searchParams = await props.searchParams;
+  const rawLang = searchParams.lang;
+  const language = rawLang === "id" ? "id" : "en";
+
+  const homeData = await getHomeContent(language);
+  const destinations = await getAllDestinations(language);
+
+  if (!homeData) {
     return <div>Error loading content</div>;
   }
 
   const translations = {
-    ENG: {
-      ...enData.navigation,
-      ...enData.hero,
-      ...enData.about,
-      ...enData.features,
-      ...enData.services,
-      ...enData.gallery,
-      ...enData.cta,
-      ...enData.contact,
-      destinations: enDestinations.map((d: any) => ({
-        name: d.name,
-        location: d.location,
-        price: d.price,
-        image: d.image,
-        slug: d.slug,
-      })),
-    } as any,
-    IND: {
-      ...idData.navigation,
-      ...idData.hero,
-      ...idData.about,
-      ...idData.features,
-      ...idData.services,
-      ...idData.gallery,
-      ...idData.cta,
-      ...idData.contact,
-      destinations: idDestinations.map((d: any) => ({
-        name: d.name,
-        location: d.location,
-        price: d.price,
-        image: d.image,
-        slug: d.slug,
-      })),
-    } as any,
+    ...homeData.navigation,
+    ...homeData.hero,
+    ...homeData.about,
+    ...homeData.features,
+    ...homeData.services,
+    ...homeData.gallery,
+    ...homeData.cta,
+    ...homeData.contact,
+    destinations: destinations.map((d: any) => ({
+      name: d.name,
+      location: d.location,
+      price: d.price,
+      image: d.image,
+      slug: d.slug,
+    })),
   };
 
-  return <LandingPageClient initialTranslations={translations} />;
+  return (
+    <LandingPageClient
+      t={translations as any}
+      language={language === "id" ? "IND" : "ENG"}
+    />
+  );
 }
