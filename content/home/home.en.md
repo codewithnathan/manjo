@@ -10,7 +10,7 @@ navigation:
   blog: Blog
   bookNow: Book Now
 hero:
-  explore: Your Journey
+  explore: Your Journey 123
   world: Our Priority
   travelDescription: >-
     Explore the world with Manjo Travel & Tours - Your trusted partner for
