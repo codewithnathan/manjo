@@ -25,7 +25,7 @@ hero:
 about:
   aboutTitle: Manjo Travel and Tours
   aboutDescription: >-
-    Founded with a passion for service and a commitment to reliable travel
+    123 Founded with a passion for service and a commitment to reliable travel
     solutions, Manjo has grown into a trusted partner for individuals, families,
     and organizations looking to explore the world with confidence.
   aboutText: >-
