@@ -417,7 +417,11 @@ export default function LandingPageClient({
                     asChild
                     className="bg-[#E68C3A] hover:bg-[#d67d2f] text-white rounded-full px-6 font-serif shadow-lg"
                   >
-                    <Link href={`/destinations/${destination.slug}`}>
+                    <Link
+                      href={`/destinations/${destination.slug}?lang=${
+                        language === "IND" ? "id" : "en"
+                      }`}
+                    >
                       {t.viewDetails}
                     </Link>
                   </Button>
