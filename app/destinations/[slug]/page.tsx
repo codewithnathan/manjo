@@ -11,6 +11,8 @@ interface PageProps {
   searchParams: Promise<{ lang?: string }>;
 }
 
+export const revalidate = 60;
+
 export default async function DestinationDetailPage(props: PageProps) {
   const params = await props.params;
   const searchParams = await props.searchParams;

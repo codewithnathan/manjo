@@ -1,6 +1,8 @@
 import { getHomeContent, getAllDestinations } from "@/lib/tina";
 import LandingPageClient from "./LandingPageClient";
 
+export const revalidate = 60; // Cek data baru setiap 60 detik
+
 export default async function LandingPage() {
   const enData = await getHomeContent("en");
   const idData = await getHomeContent("id");
