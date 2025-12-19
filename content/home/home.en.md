@@ -25,15 +25,15 @@ hero:
 about:
   aboutTitle: Manjo Travel and Tours
   aboutDescription: >-
-    123 Founded with a passion for service and a commitment to reliable travel
+    Founded with a passion for service and a commitment to reliable travel
     solutions, Manjo has grown into a trusted partner for individuals, families,
     and organizations looking to explore the world with confidence.
   aboutText: >-
-    Based in Manado, Indonesia, our team is dedicated to providing high-quality
-    travel services — from flight tickets and tour packages to visa assistance
-    and conference event logistics support. We take pride in delivering
-    experiences that are not only well-organized, memorable, but also crafted
-    with genuine care.
+    123 Based in Manado, Indonesia, our team is dedicated to providing
+    high-quality travel services — from flight tickets and tour packages to visa
+    assistance and conference event logistics support. We take pride in
+    delivering experiences that are not only well-organized, memorable, but also
+    crafted with genuine care.
   ourCommitment: Our Commitment
   personalizedService: Personalized service
   seamlessLogistics: Seamless logistics support
