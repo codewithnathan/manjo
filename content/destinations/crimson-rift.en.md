@@ -1,7 +1,7 @@
 ---
 locale: en
-slug: hi
-name: Hi
+slug: hi-test
+name: hitest
 location: 'Wadi Rum Desert, Jordan'
 price: 300
 image: /beach-scene.jpg
