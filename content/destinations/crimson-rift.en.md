@@ -1,7 +1,7 @@
 ---
 locale: en
-slug: crimson-rift
-name: Crimson Rift
+slug: hi
+name: Hi
 location: 'Wadi Rum Desert, Jordan'
 price: 300
 image: /beach-scene.jpg

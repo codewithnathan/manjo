@@ -33,14 +33,19 @@ export async function getAllDestinations(locale: "en" | "id") {
 
 export async function getDestinationBySlug(slug: string, locale: "en" | "id") {
   try {
-    const data = await client.queries.destination(
+    const data = await client.queries.destinationConnection(
       {
-        relativePath: `${slug}.${locale}.md`,
+        filter: {
+          slug: { eq: slug },
+          locale: { eq: locale },
+        },
+        first: 1,
       },
       { fetchOptions: { cache: "no-store" } }
     );
 
-    return data.data.destination;
+    const destination = data.data.destinationConnection.edges?.[0]?.node;
+    return destination || null;
   } catch (error) {
     console.error("Error loading destination", error);
     return null;

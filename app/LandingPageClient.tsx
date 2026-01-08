@@ -79,63 +79,74 @@ export default function LandingPageClient({
   return (
     <div className="min-h-screen bg-[#F4F2EF]">
       {/* Header */}
-      <header className="px-6 py-4 lg:px-16 flex items-center justify-between border-b border-[#D8D1BD] fixed top-0 left-0 w-full bg-[#F4F2EF] z-20">
-        <div className="flex items-center">
-          <Image
-            src="/manjo-logo.png"
-            alt="Manjo Travel and Tours"
-            width={200}
-            height={70}
-            className="h-18 w-auto"
-          />
-        </div>
+      <header className="border-b border-[#D8D1BD] fixed top-0 left-0 w-full bg-[#F4F2EF] z-20">
+        <div className="py-4 lg:px-12 max-w-6xl mx-auto flex items-center justify-between">
+          <div className="flex items-center">
+            <Image
+              src="/manjo-logo.png"
+              alt="Manjo Travel and Tours"
+              width={200}
+              height={70}
+              className="h-18 w-auto"
+            />
+          </div>
 
-        <nav className="hidden md:flex items-center gap-8 text-[#336021] font-sans">
-          <a href="#" className="hover:text-[#E68C3A] transition-colors">
-            {t.home}
-          </a>
-          <a href="#about" className="hover:text-[#E68C3A] transition-colors">
-            {t.aboutUs}
-          </a>
-          <a
-            href="#services"
-            className="hover:text-[#E68C3A] transition-colors"
-          >
-            {t.ourService}
-          </a>
-          <a href="#gallery" className="hover:text-[#E68C3A] transition-colors">
-            {t.tourpackages}
-          </a>
-          <a href="#gallery" className="hover:text-[#E68C3A] transition-colors">
-            {t.gallery}
-          </a>
-          <a href="#contact" className="hover:text-[#E68C3A] transition-colors">
-            {t.contactus}
-          </a>
-        </nav>
+          <nav className="hidden md:flex items-center gap-10 text-[#336021] font-sans">
+            <a href="#" className="hover:text-[#E68C3A] transition-colors">
+              {t.home}
+            </a>
+            <a href="#about" className="hover:text-[#E68C3A] transition-colors">
+              {t.aboutUs}
+            </a>
+            <a
+              href="#services"
+              className="hover:text-[#E68C3A] transition-colors"
+            >
+              {t.ourService}
+            </a>
+            <a
+              href="#gallery"
+              className="hover:text-[#E68C3A] transition-colors"
+            >
+              {t.tourpackages}
+            </a>
+            <a
+              href="#gallery"
+              className="hover:text-[#E68C3A] transition-colors"
+            >
+              {t.gallery}
+            </a>
+            <a
+              href="#contact"
+              className="hover:text-[#E68C3A] transition-colors"
+            >
+              {t.contactus}
+            </a>
+          </nav>
 
-        <div className="flex items-center gap-4 scale-80">
-          <div className="flex items-center gap-1 border-2 border-[#336021] rounded-full p-1">
-            <Link
-              href="/?lang=id"
-              className={`px-4 py-1.5 rounded-full text-sm font-serif font-bold transition-all ${
-                language === "IND"
-                  ? "bg-[#336021] text-white"
-                  : "text-[#336021] hover:bg-[#D8D1BD]/30"
-              }`}
-            >
-              ID
-            </Link>
-            <Link
-              href="/?lang=en"
-              className={`px-4 py-1.5 rounded-full text-sm font-serif font-bold transition-all ${
-                language === "ENG"
-                  ? "bg-[#336021] text-white"
-                  : "text-[#336021] hover:bg-[#D8D1BD]/30"
-              }`}
-            >
-              EN
-            </Link>
+          <div className="flex items-center gap-4 scale-80">
+            <div className="flex items-center gap-1 border-2 border-[#336021] rounded-full p-1">
+              <Link
+                href="/?lang=id"
+                className={`px-4 py-1.5 rounded-full text-sm font-serif font-bold transition-all ${
+                  language === "IND"
+                    ? "bg-[#336021] text-white"
+                    : "text-[#336021] hover:bg-[#D8D1BD]/30"
+                }`}
+              >
+                ID
+              </Link>
+              <Link
+                href="/?lang=en"
+                className={`px-4 py-1.5 rounded-full text-sm font-serif font-bold transition-all ${
+                  language === "ENG"
+                    ? "bg-[#336021] text-white"
+                    : "text-[#336021] hover:bg-[#D8D1BD]/30"
+                }`}
+              >
+                EN
+              </Link>
+            </div>
           </div>
         </div>
       </header>
@@ -473,7 +484,7 @@ export default function LandingPageClient({
             </div>
 
             <div className="flex gap-4 items-center">
-              <Link href="https://wa.me">
+              <Link href="https://wa.me/6281125519200">
                 <Image
                   src="/icon/whatsapp-icon.svg"
                   alt="wa"
