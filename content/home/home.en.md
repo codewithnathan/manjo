@@ -71,7 +71,7 @@ services:
     School trips, corporate incentives, technical visits, family tours, cruises,
     train journeys, attractions, and group tours.
 gallery:
-  discoverTheWorld: Discover the worlds mots
+  discoverTheWorld: Discover the world
   viewDetails: View Details
   person: person
   circularText: TO TRAVEL AND RELAX YOURSELF • BEST PLACE TO FIND •
