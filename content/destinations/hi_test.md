@@ -12,5 +12,7 @@ description: |
   This is description
 itinerary: |
   1. This is test!
+duration: 10
+difficulty: Easy
 ---
 
