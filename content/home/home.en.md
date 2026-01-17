@@ -11,10 +11,10 @@ navigation:
   bookNow: Book Now
 hero:
   explore: Your Journey
-  world: Our Priority
+  world: Our Priority. Also this!
   travelDescription: >-
     Explore the world with Manjo Travel & Tours - Your trusted partner for
-    tours, tickets, visas, and conferences.
+    tours, tickets, visas, and conferences. This is updated content!
   heroTagline: 'Your journey, our priority.'
   heroDescription: >-
     Explore the world with Manjo Travel & Tours - Your trusted partner for
